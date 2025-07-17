@@ -13,12 +13,12 @@ public class ShoppingCartCalculator {
      */
     public static double calculateTotalPrice(ArrayList<CartItem> items) {
         double total = 0.0;
-        //Checkของตะกร้าว่าเป็น null
+        //Check ของตะกร้าว่าเป็น null มั้ย
         if (items == null) {
             return total;
         }
         for (CartItem cartItem : items) {
-            //Checkค่าของ Price และ Quantity ถ้าติดลบจะไม่นับ
+            //Check ค่าของ Price และ Quantity ถ้าติดลบจะไม่นับ
             if (!(cartItem.price() < 1 || cartItem.quantity() < 1)) {
                 if (cartItem.sku().equals("NORMAL")) {
                     total += cartItem.quantity() * cartItem.price();
